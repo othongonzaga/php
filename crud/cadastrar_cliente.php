@@ -1,7 +1,7 @@
 <?php
 
 function limpar_texto($str){
-    return preg_replace("/[^0-9]/","", $str);
+    return preg_replace("/[^0-9]/", "", $str);
 }
 
 if(count($_POST) > 0){
@@ -27,7 +27,7 @@ if(count($_POST) > 0){
 
         $pedacos = explode('/', $nascimento);
         if(count($pedacos) == 3){
-            $nascimento = implode('/', array_reverse($pedacos));
+            $nascimento = implode('-', array_reverse($pedacos));
             
         }else{
             $erro = "A data de nascimento deve seguir o padrão dia/mes/ano.";
@@ -75,11 +75,11 @@ if(count($_POST) > 0){
             </p>
             <p>
                 <label>Telefone:</label>
-                <input value="<?php if(isset($_POST['telefone'])) echo $_POST['telefone']; ?>" placeholder="(11) 98888-8888" type="text">
+                <input value="<?php if(isset($_POST['telefone'])) echo $_POST['telefone']; ?>" name= "telefone" placeholder="(11) 98888-8888" type="text">
             </p>
             <p>
                 <label>Data Nascimento:</label>
-                <input value="<?php if(isset($_POST['nascimento'])) echo $_POST['nascimento']; ?>" name="nascimento" type="date">
+                <input value="<?php if(isset($_POST['nascimento'])) echo $_POST['nascimento']; ?>" name="nascimento" type="text">
             </p>
             <div class="campo_botao_form">
                 <button type="submit" class="btn_form">Salvar Cliente</button>
