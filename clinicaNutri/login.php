@@ -16,9 +16,8 @@ session_start();
 </head>
 <body>
     <div class="container">
-        <!-- Imagem dos profissionais de saúde -->
-        <img src="./images/profissionais.jpg" alt="medicos">
-        <!-- Formulário do login -->
+        <img src="./images/profissionais.jpg" alt="nutricionista">
+       
         <form action="./backend/functionLogin.php" method="POST">
         <h1 class="titulo">Total Care</h1>
 
@@ -40,13 +39,12 @@ session_start();
                 <label>Senha:</label>
                 <input type="password" placeholder="Informe sua senha" name="senha" required>
             </div>
-            <!-- Botaão para realizar o login -->
+           
             <button type="submit">Entrar</button>
+
             <div class="links" >
-                <!-- Botaão para recuperar a senha -->
                 <a href="forgetPassword.php">Esqueceu a senha?</a>
                 <span>|</span>
-                <!-- Botaão para ir para a página de cadastro -->
                 <a href="register.php">Cadastre-se</a>
             </div>
         </form>
