@@ -10,8 +10,7 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="shortcut icon" href="images/favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/responsive.css">
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <title>Login - Total Care</title>
 </head>
 <body>
@@ -24,7 +23,6 @@ session_start();
         <?php
             if (isset($_SESSION['nao_autenticado'])):
         ?>
-        <!-- menssagem de email ou senha errados -->
         <p>ERRO: E-mail ou senha inválidos!</p>
         <?php
             endif;

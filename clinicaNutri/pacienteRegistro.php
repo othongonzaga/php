@@ -9,8 +9,7 @@ require ('./backend/verificaLogin.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="shortcut icon" href="images/favicon.ico" />
-    <link rel="stylesheet" href="./styles/responsive.css">
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <title>Cadastrar Paciente - Clínica Nutri</title>
 </head>
 <body>
