@@ -49,6 +49,6 @@ session_start();
             </div>
         </form>
     </div>
-    <footer class="footer">Feito por <a href="https://www.linkedin.com/in/vitorfigueiredopb/">Othon Gonzaga</a> :)</footer>
+    <footer class="footer">Feito por <a href="https://www.linkedin.com/in/othon-gonzaga-7bb4501a4/">Othon Gonzaga</a> :)</footer>
 </body>
 </html>
