@@ -8,14 +8,14 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="shortcut icon" href="images/simbolo.ico.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
     <title>Login - Total Care</title>
 </head>
 <body>
     <div class="container">
-        <img src="./images/profissionais.jpg" alt="nutricionista">
+        <img src="./images/nutricionista.jpg" alt="nutricionista">
        
         <form action="./backend/functionLogin.php" method="POST">
         <h1 class="titulo">Total Care</h1>

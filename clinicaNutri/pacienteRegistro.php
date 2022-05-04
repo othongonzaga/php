@@ -8,7 +8,7 @@ require ('./backend/verificaLogin.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="shortcut icon" href="images/simbolo.ico.ico" />
     <link rel="stylesheet" href="./styles/style.css">
     <title>Cadastrar Paciente - Clínica Nutri</title>
 </head>
@@ -20,7 +20,7 @@ require ('./backend/verificaLogin.php');
         </nav>
     </header>
     <div class="container">
-        <img src="./images/enfermeira.jpg" alt="nutricionista">
+        <img src="./images/nutricionista.jpg" alt="nutricionista">
 
         <form action="./backend/pacientRegister.php" method="POST">
             <h1 class="titulo">Cadastrar paciente</h1>
