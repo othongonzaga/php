@@ -1,8 +1,9 @@
 *{
     font-family: 'Ubuntu', sans-serif;
 }
+
 body{
-    background-color: #F2F2F2;
+    background-color: #1d3557;
 }
 
 h1{
@@ -147,6 +148,6 @@ footer{
     width: 100%;   
 }
 
-.textoFoot{
+footer p{
     color: #BF495E;
 }
