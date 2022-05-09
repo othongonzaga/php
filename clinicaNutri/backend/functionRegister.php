@@ -12,7 +12,7 @@
             echo "<center><p>Você deixou campos em branco, corrija-os para continuar!</p><center/><br/>";
             echo "<center><p>Voltando a página de cadastro...</p><center/><br/>";
             // Redireciona dentro de 5s para a página de cadastro se a condição acima for verdadeira
-            header('refresh: 5; ../register.php');
+            header('refresh: 5; ../registro.php');
         } else {
             // Verifica se a senha é igual a confirmção da senha
             if ($senha == $senhaConfirm) {

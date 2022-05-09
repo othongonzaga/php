@@ -43,7 +43,7 @@ session_start();
             <div class="links" >
                 <a href="forgetPassword.php">Esqueceu a senha?</a>
                 <span>|</span>
-                <a href="register.php">Cadastre-se</a>
+                <a href="registro.php">Cadastre-se</a>
             </div>
         </form>
     </div>
