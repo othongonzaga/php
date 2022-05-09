@@ -16,7 +16,7 @@ require ('./backend/functionList.php');
     <header>
         <h1 class="titulo">Pacientes cadastrados</h1>
         <nav class="menu">
-            <a href="pacientRegister.php">Cadastrar Paciente</a>
+            <a href="pacienteRegistro.php">Cadastrar Paciente</a>
             <a href="backend/logout.php">Logout</a>
         </nav>
     </header>
