@@ -21,7 +21,7 @@
             $query = "INSERT INTO `pacientes` (`id`, `nome`, `idade`, `peso`, `altura`, `imc`) VALUES (NULL, '$nome', '$idade', '$peso', '$altura', '$imc')";
             // Envia o comando salvo em query para o banco de dados
             mysqli_query($mysqli, $query);
-            header('Location: ../list.php');
+            header('Location: ../lista.php');
 
             
         }

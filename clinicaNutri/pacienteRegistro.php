@@ -14,7 +14,7 @@ require ('./backend/verificaLogin.php');
 <body>
     <header>
         <nav>
-            <a href="list.php">Listar Pacientes</a>
+            <a href="lista.php">Listar Pacientes</a>
             <a href="backend/logout.php">Logout</a>
         </nav>
     </header>

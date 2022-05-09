@@ -15,7 +15,7 @@ $row = mysqli_num_rows($result);
 
 if ($row == 1) {
     $_SESSION['email'] = $email;
-    header('Location: ../list.php');
+    header('Location: ../lista.php');
     exit();
 } else {
     $_SESSION['nao_autenticado'] = true;
