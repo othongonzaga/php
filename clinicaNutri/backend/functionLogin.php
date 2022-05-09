@@ -3,7 +3,7 @@ session_start();
 require ('conexao.php');
 
 if (empty($_POST['email']) || empty($_POST['senha'])) {
-    header('Location: ../login.php');
+    header('Location: ../index.php');
     exit;
 }
 
@@ -19,7 +19,7 @@ if ($row == 1) {
     exit();
 } else {
     $_SESSION['nao_autenticado'] = true;
-    header('Location: ../login.php');
+    header('Location: ../index.php');
     exit();
 }
 ?>
