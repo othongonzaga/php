@@ -3,7 +3,7 @@
 }
 
 body{
-    background-color: #1d3557;
+    background-color: green;
 }
 
 h1{
@@ -146,8 +146,4 @@ footer{
     text-align: center;
     margin-top: -20px;
     width: 100%;   
-}
-
-footer p{
-    color: #BF495E;
 }

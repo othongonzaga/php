@@ -7,7 +7,6 @@ require ('./backend/verificaLogin.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="shortcut icon" href="images/simbolo.ico.ico" />
     <link rel="stylesheet" href="./styles/style.css">
     <title>Cadastrar Paciente - Clínica Nutri</title>
@@ -43,6 +42,6 @@ require ('./backend/verificaLogin.php');
             <button type="submit">Cadastrar</button>
         </form>
     </div>
-    <footer class="footer"><p class="textoFooter">Feito po</p>r <a href="https://www.linkedin.com/in/othon-gonzaga-7bb4501a4/">Othon Gonzaga</a> <p class="textoFooter">:)</p></footer>
+    <footer class="footer">Feito por<a href="https://www.linkedin.com/in/othon-gonzaga-7bb4501a4/">Othon Gonzaga</a>:)</footer>
 </body>
 </html>

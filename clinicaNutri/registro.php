@@ -30,6 +30,6 @@
         <a id="linkLogin" href="login.php">Login</a>
     </form>
     </div>
-    <footer class="footer"><p class="textoFooter">Feito po</p>r <a href="https://www.linkedin.com/in/othon-gonzaga-7bb4501a4/">Othon Gonzaga</a> <p class="textoFooter">:)</p></footer>
+    <footer class="footer">Feito por<a href="https://www.linkedin.com/in/othon-gonzaga-7bb4501a4/">Othon Gonzaga</a>:)</footer>
 </body>
 </html>

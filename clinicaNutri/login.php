@@ -7,7 +7,6 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="shortcut icon" href="images/simbolo.ico.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
@@ -23,7 +22,7 @@ session_start();
         <?php
             if (isset($_SESSION['nao_autenticado'])):
         ?>
-        <p>ERRO: E-mail ou senha inválidos!</p>
+        <p class="error">ERRO: E-mail ou senha inválidos!</p>
         <?php
             endif;
             unset($_SESSION['nao_autenticado']);
@@ -47,6 +46,6 @@ session_start();
             </div>
         </form>
     </div>
-    <footer class="footer"><p class="textoFooter">Feito po</p>r <a href="https://www.linkedin.com/in/othon-gonzaga-7bb4501a4/">Othon Gonzaga</a> <p class="textoFooter">:)</p></footer>
+    <footer class="footer">Feito por<a href="https://www.linkedin.com/in/othon-gonzaga-7bb4501a4/">Othon Gonzaga</a>:)</footer>
 </body>
 </html>
