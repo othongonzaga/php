@@ -43,6 +43,6 @@ require ('./backend/verificaLogin.php');
             <button type="submit">Cadastrar</button>
         </form>
     </div>
-    <footer class="footer">Feito por <a href="https://www.linkedin.com/in/othon-gonzaga-7bb4501a4/">Othon Gonzaga</a> :)</footer>
+    <footer class="footer"><p class="textoFooter">Feito po</p>r <a href="https://www.linkedin.com/in/othon-gonzaga-7bb4501a4/">Othon Gonzaga</a> <p class="textoFooter">:)</p></footer>
 </body>
 </html>

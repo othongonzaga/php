@@ -11,14 +11,14 @@ session_start();
     <link rel="shortcut icon" href="images/simbolo.ico.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
-    <title>Login - Total Care</title>
+    <title>Login - Clínica Nutri</title>
 </head>
 <body>
     <div class="container">
         <img src="./images/nutricionista.jpg" alt="nutricionista">
        
         <form action="./backend/functionLogin.php" method="POST">
-        <h1 class="titulo">Total Care</h1>
+        <h1 class="titulo">Clínica Nutri</h1>
 
         <?php
             if (isset($_SESSION['nao_autenticado'])):
@@ -47,6 +47,6 @@ session_start();
             </div>
         </form>
     </div>
-    <footer class="footer">Feito por <a href="https://www.linkedin.com/in/othon-gonzaga-7bb4501a4/">Othon Gonzaga</a> :)</footer>
+    <footer class="footer"><p class="textoFooter">Feito po</p>r <a href="https://www.linkedin.com/in/othon-gonzaga-7bb4501a4/">Othon Gonzaga</a> <p class="textoFooter">:)</p></footer>
 </body>
 </html>

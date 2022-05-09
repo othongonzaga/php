@@ -2,7 +2,7 @@
     font-family: 'Ubuntu', sans-serif;
 }
 body{
-    background-color: #F2F2F2
+    background-color: #F2F2F2;
 }
 
 h1{
@@ -89,7 +89,6 @@ table th{
     line-height: 50px;
     color: white;
     background-color: #203A40;
-
 }
 
 table td{
@@ -104,7 +103,6 @@ p{
     text-align: center;
     color: white;
     background-color: #F24B59;
-
     padding: 2px;
     border-radius: 4px;
 }
@@ -131,10 +129,10 @@ header nav{
     margin-left: 420px;
     margin-right: 420px;
 }
+
 header a{
     text-align: center;
 }
-
 
 button:hover{    
     cursor: pointer;
@@ -147,4 +145,8 @@ footer{
     text-align: center;
     margin-top: -20px;
     width: 100%;   
+}
+
+.textoFoot{
+    color: #BF495E;
 }
