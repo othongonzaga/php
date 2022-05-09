@@ -24,8 +24,8 @@
                 // Verifica se não houve nehum problema ao inserir no banco
                 if (mysqli_affected_rows($mysqli) > 0) {
                     echo "Usuario inserido com sucesso!<br/>";
-                    echo '<a href="../index.php">Ir para o login</a>';
-                    header('Location: ../index.php');
+                    echo '<a href="../login.php">Ir para o login</a>';
+                    header('Location: ../login.php');
                 } else {
                     echo "Erro ao inserir usuario!";
                 }

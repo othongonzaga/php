@@ -147,3 +147,12 @@ footer{
     margin-top: -20px;
     width: 100%;   
 }
+
+.apresentacao{
+    background-color: #a8dadc;
+    border-radius: 5px;
+}
+
+.descricao{
+    padding: 10px;
+}

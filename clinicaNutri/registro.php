@@ -27,7 +27,7 @@
         </div>
         <button type="submit">Cadastrar</button>
         
-        <a id="linkLogin" href="index.php">Login</a>
+        <a id="linkLogin" href="login.php">Login</a>
     </form>
     </div>
     <footer class="footer">Feito por<a href="https://www.linkedin.com/in/othon-gonzaga-7bb4501a4/">Othon Gonzaga</a>:)</footer>
