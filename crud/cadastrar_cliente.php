@@ -63,7 +63,7 @@ if(count($_POST) > 0){
 </head>
 <body>
     <div class="campo_cadastro">
-        <a href="/clientes.php">Voltar para a lista</a>
+        <a href="./clientes.php">Voltar para a lista</a>
         <form method="POST" action="">
             <p>
                 <label>Nome:</label>
