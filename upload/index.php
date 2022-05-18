@@ -1,4 +1,6 @@
 <?php
+include("conexao.php");
+
 if(isset($_FILES['arquivo'])){
     $arquivo = $_FILES['arquivo'];
 
@@ -14,8 +16,25 @@ if(isset($_FILES['arquivo'])){
     $nomeArquivo = $arquivo['name'];
     $novoNomeArquivo = uniqid();
     $extensao = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+    if($extensao != "jpg" && $extensao != "png" && $extensao != "svg"){
+        die("Tipo de arquivo não aceito!");
+    }
+
+    $path = $pasta . $novoNomeArquivo . "." . $extensao;
+    $deu_certo = move_uploaded_file($arquivo["tmp_namme"], $path);
+
+    if($deu_certo){
+        $mysqli->query("INSERT INTO arquivos (nome, path) VALUES ('$nomeArquivo', '$path')") or die($mysqli->error);
+        echo "<p>Arquivo enviado com sucesso!</p>";
+    }else{
+        echo "<p>Falha ao enviar arquivo!</p>";
+    }
 }
+
+$sql_query = $mysqli->query("SELECT * FROM arqivos") or die($mysqli->error);
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -32,5 +51,28 @@ if(isset($_FILES['arquivo'])){
         </p>
         <button type="submit">Enviar arquivo</button>
     </form>
+
+    <h1>Lista de Arquivos</h1>
+    <table border="1" cellspacing="10">
+        <thead>
+            <th>Preview</th>
+            <th>Arquivo</th>
+            <th>Data de Envio</th>
+        </thead>
+        <tbody>
+            <?php
+            while($arquivo = $sql_query->fetch_assoc()){
+
+            ?>
+            <tr>
+                <td><img height="70" src="<?php echo $arquivo['path']; ?>" alt=""></td>
+                <td><a target="_blank" href="<?php echo $arquivo['path']; ?>"><?php echo $arquivo['nome']; ?></a></td>
+                <td><?php echo date("d/m/Y H:i", strtotime($arquivo['data_upload'])); ?></td>
+            </tr>
+            <?php
+            }
+            ?>
+        </tbody>
+    </table>
 </body>
 </html>
