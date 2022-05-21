@@ -1,38 +1,69 @@
 <?php
 include("conexao.php");
 
-if(isset($_FILES['arquivo'])){
-    $arquivo = $_FILES['arquivo'];
+if(isset($_GET['deletar'])){
+    $id = intval($_GET['deletar']);
+    $sql_query = $mysqli->query("SELECT * FROM arquivos WHERE id = '$id") or die($mysqli->error);
+    $arquivo = $sql_query->fetch_assoc();
 
-    if($arquivo['error']){
+    if(unlink($arquivo['path'])){
+        $mysqli->query("DELETE FROM arquivos WHERE id = '$id") or die($mysqli->error);
+    };
+
+    echo "<p>Arquivo excluid com sucesso!</p>";
+}
+
+$funcao = function($error, $size, $name, $tmp_namme) use($mysqli){
+    
+
+    if($error){
         die("Falha ao enviar arquivo");
     }
-
-    if($arquivo['size'] > 2097152){
+    
+    if($size > 2097152){
         die("Arquivo muito grande! Máximo: 2MB"); // 1024 bytes = 1kb; 1024 kb = 1 mb
     }
-
+    
     $pasta = "arquivos/";
-    $nomeArquivo = $arquivo['name'];
+    $nomeArquivo = $name;
     $novoNomeArquivo = uniqid();
-    $extensao = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
+    $extensao = strtolower(pathinfo($nomeArquivo,PATHINFO_EXTENSION));
+    
     if($extensao != "jpg" && $extensao != "png" && $extensao != "svg"){
         die("Tipo de arquivo não aceito!");
     }
-
+    
     $path = $pasta . $novoNomeArquivo . "." . $extensao;
-    $deu_certo = move_uploaded_file($arquivo["tmp_namme"], $path);
-
+    $deu_certo = move_uploaded_file($tmp_namme, $path);
+    
     if($deu_certo){
         $mysqli->query("INSERT INTO arquivos (nome, path) VALUES ('$nomeArquivo', '$path')") or die($mysqli->error);
-        echo "<p>Arquivo enviado com sucesso!</p>";
+        true;
     }else{
-        echo "<p>Falha ao enviar arquivo!</p>";
+        false;
+    }
+};
+
+if(isset($_FILES['arquivos'])){
+    $arquivos = $_FILES['arquivos'];
+    $tudo_certo = true;
+    
+    foreach($arquivos['name'] as $index => $arq){
+        $tudo_certo = $funcao($arquivos['error'][$index],$arquivos['size'][$index], $arquivos['name'][$index], $arquivos['tmp_name'][$index]);
+
+        if(!$tudo_certo){
+            $tudo_certo = false;
+        }
+    }
+
+    if($tudo_certo){
+        echo "<p>Todos os arquivo foram enviados com sucesso!</p>";
+    }else{
+        echo "<p>Todos os arquivo foram enviados com sucesso!</p>";
     }
 }
 
-$sql_query = $mysqli->query("SELECT * FROM arqivos") or die($mysqli->error);
+$sql_query = $mysqli->query("SELECT * FROM arquivos") or die($mysqli->error);
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +78,7 @@ $sql_query = $mysqli->query("SELECT * FROM arqivos") or die($mysqli->error);
     <form method="POST" enctype="multipart/form-data" action="">
         <p>
             <label for="">Selecione o arquivo</label>
-            <input name="arquivo" type="file" name="" id="">
+            <input multiple name="arquivos[]" type="file" name="" id="">
         </p>
         <button type="submit">Enviar arquivo</button>
     </form>
@@ -58,6 +89,7 @@ $sql_query = $mysqli->query("SELECT * FROM arqivos") or die($mysqli->error);
             <th>Preview</th>
             <th>Arquivo</th>
             <th>Data de Envio</th>
+            <th>Apagar</th>
         </thead>
         <tbody>
             <?php
@@ -68,6 +100,7 @@ $sql_query = $mysqli->query("SELECT * FROM arqivos") or die($mysqli->error);
                 <td><img height="70" src="<?php echo $arquivo['path']; ?>" alt=""></td>
                 <td><a target="_blank" href="<?php echo $arquivo['path']; ?>"><?php echo $arquivo['nome']; ?></a></td>
                 <td><?php echo date("d/m/Y H:i", strtotime($arquivo['data_upload'])); ?></td>
+                <th><a href="index.php?deletar=<?php echo $arquivo['id']; ?>"></a></th>
             </tr>
             <?php
             }
